@@ -1,13 +1,14 @@
 local lastdata = nil
-ESX = nil
-if Config.ESX then
-    TriggerEvent('esx:getSharedObject', function(obj) ESX = obj end)
+QBCore = nil
+if Config.QBCore then
+    TriggerEvent('QBCore:GetObject', function(obj) QBCore = obj end)
 end
 
 function DiscordRequest(method, endpoint, jsondata)
     local data = nil
     PerformHttpRequest("https://discordapp.com/api/" .. endpoint,
-                       function(errorCode, resultData, resultHeaders)
+                       function(err    TriggerEvent('QBCore:GetObject', function(obj) QBCore = obj end)
+orCode, resultData, resultHeaders)
         data = {data = resultData, code = errorCode, headers = resultHeaders}
     end, method, #jsondata > 0 and json.encode(jsondata) or "", {
         ["Content-Type"] = "application/json",
@@ -35,7 +36,7 @@ function mysplit(inputstr, sep)
 end
 
 function GetRealPlayerName(playerId)
-    if Config.ESX then
+    if Config.QBCore then
         local xPlayer = ESX.GetPlayerFromId(playerId)
         return xPlayer.getName()
     else
