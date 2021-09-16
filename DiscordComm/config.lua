@@ -1,9 +1,9 @@
 Config = {}
-Config.ESX = false
+Config.QBCore = false
 Config.BotToken = "Your Bot Token"
 Config.WebHook = "Your Discord Webhook"
 Config.ChannelID = "Channel ID of the Commands"
-Config.ReplyUserName = "Bot Username"
+Config.ReplyUserName = "ALGERIAN RP"
 Config.AvatarURL = "Bot Avatar URL"
 Config.Prefix = "!"
 Config.WaitEveryTick = 4000  -- ITS MS
