@@ -37,10 +37,10 @@ end
 
 function GetRealPlayerName(playerId)
     if Config.QBCore then
-        local xPlayer = ESX.GetPlayerFromId(playerId)
+        local xPlayer = QBCore.Functions.GetPlayer(playerId)
         return xPlayer.getName()
     else
-        return "ESX NOT ENABLED"
+        return "qbcore NOT ENABLED"
     end
 end
 
@@ -105,7 +105,7 @@ function ExecuteCOMM(command)
             -- Return Player List
         elseif string.starts(command, Config.Prefix .. "playerlist") then
 
-           if Config.ESX then
+           if Config.QBCore then
                 local count = 0
                 local xPlayers = ESX.GetPlayers()
                 local players = "Players: "
